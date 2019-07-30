@@ -1,33 +1,136 @@
-.App {
-  text-align: center;
+nav {
+  height: 6vh;
+  width: 100vw;
+  color: #dbdb76;
+  background-color: #0f0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.navContainer {
+  height: 100%;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bootstrap {
+  font-size: 1.6em;
+}
+.navLinks {
+  color: #fff;
+  display: none;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+}
+.menu {
+  padding: 10px;
+  background-color: yellow;
+  color: grey;
+  border-radius: 5px;
+}
+main {
+  background-image: url("http://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 60vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+#dropdownMenu {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 180px;
+  background-color: rgb(25, 27, 31);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
-
-.App-link {
-  color: #61dafb;
+.dropdownLinks {
+  list-style: none;
+  line-height: 2em;
+  width: 540px;
 }
-
-@keyframes App-logo-spin {
+.menu-open {
+  animation: openMenu 0.5s linear forwards;
+}
+.menu-close {
+  animation: closeMenu 0.5s linear forwards;
+}
+@keyframes openMenu {
   from {
-    transform: rotate(0deg);
+    height: 0px;
+    display: none;
   }
   to {
-    transform: rotate(360deg);
+    height: 180px;
+    display: block;
+  }
+}
+@keyframes closeMenu {
+  from {
+    height: 180px;
+    display: block;
+  }
+  to {
+    height: 0px;
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .navContainer {
+    width: 540px;
+  }
+  .mainContainer {
+    width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .navContainer {
+    width: 720px;
+  }
+  .mainContainer {
+    width: 720px;
+  }
+  .dropdownLinks {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  nav {
+    height: 80px;
+    align-items: flex-end;
+    background: none;
+  }
+  .navContainer {
+    width: 960px;
+    background: none;
+    z-index: 1;
+  }
+  main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .mainContainer {
+    width: 960px;
+  }
+  .navLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu {
+    display: none;
   }
 }
